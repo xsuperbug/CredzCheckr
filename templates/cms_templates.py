@@ -7,7 +7,7 @@ import sys, os, re
 from bs4 import BeautifulSoup
 
 
-def cms_type(cms):
+def cms_input(cms):
 	cms = cms.lower()
 	#input username & password
 	cms_value = {

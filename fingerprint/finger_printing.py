@@ -19,7 +19,7 @@ class finger_print:
         req = requests.get(url, verify=False, timeout=10)
         if req.status_code in [403, 401] and "WWW-Authenticate" in req.headers:
             print(" [i] Basic authentification")
-            return "basic-auth"
+            return "basic_auth"
         else:
             return "web"
 
@@ -47,11 +47,12 @@ class finger_print:
 
 
     def other_check(self, url):
-        print(" [i] Search other techno")
+        print(" [i] Search technologie")
 
         techno_found = False
 
-        url_fav =  "{}favicon.ico".format(url) if url[-1] == "/" else "{}/favicon.ico".format(url)
+        domain = "/".join(url.split("/")[:3])
+        url_fav =  "{}favicon.ico".format(domain) if domain[-1] == "/" else "{}/favicon.ico".format(domain)
         req = requests.get(url_fav, verify=False, timeout=10, allow_redirects=True)
         if req.status_code == 200:
             fav_found = False
@@ -60,13 +61,14 @@ class finger_print:
             for fg in favinger:
                 if hash_fav == fg:
                     techno_found = True
-                    print(" [i] {} found".format(favinger[fg]))
+                    print("  \u251c {} found".format(favinger[fg]))
                     return favinger[fg]
             if not techno_found:
+                print("\t\u251c [i] Favicon.ico hash: {}".format(hash_fav))
                 username_input = False
                 password_input = False
                 default_input = ["username:password", "usr:pwd", "user:pass"]
-                print(" [i] Search input")
+                print("\t\u251c [i] Search input")
                 #TODO search input with a percentage
                 soup = BeautifulSoup(req.text, "html.parser")
                 for p in soup.find_all('input'):
