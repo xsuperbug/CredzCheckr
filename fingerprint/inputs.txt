@@ -1,0 +1,11 @@
+username:password
+usr:pwd
+user:pass
+user:passwd
+user:password
+email:password
+login:password
+mail_username:mail_password
+j_username:j_password
+EMAIL:PASSWORD
+admin_username:admin_pwd

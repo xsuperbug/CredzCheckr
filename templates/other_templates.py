@@ -11,6 +11,7 @@ def other_input(url):
 	#input username & password
 	other_value = {
 	"paloalto":"user:passwd",
+	"webmin":"user:password"
 	}
 	if other_value[other]:
 		return other_value[other]

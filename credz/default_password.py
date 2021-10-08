@@ -1,18 +1,22 @@
 default_passwords = {
+    #WORDPRESS
     "wordpress": [
     "admin:password",
     "wp:wp",
     "root:root"
     ],
+    #DRUPAL
     "drupal": [
     "admin:admin@123"
     ],
     "ez publish": [
     "admin:publish"
     ],
+    #PALOALTO
     "paloalto": [
     "admin:admin"
     ],
+    #TOMCAT
     "tomcat": [
     "tomcat:tomcat",
     "admin:admin",
@@ -30,5 +34,9 @@ default_passwords = {
     "role:changethis",
     "tomcat:changethis",
     "admin:j5Brn9",
-    "role1:tomcat"]
+    "role1:tomcat"],
+    #WEBMIN
+    "webmin": [
+    "root:eraadmin"
+    ]
 }
